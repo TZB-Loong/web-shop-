@@ -1,0 +1,57 @@
+[{
+  "id":1001,
+  "name":"韩束·补水乳",
+  "gender":"护肤",
+  "age":144,
+  "telephone":"巨补水，消除干燥肌肤",
+  "rank":"产品"
+},{
+  "id":1002,
+  "name":"卡姿兰·眼线笔",
+  "gender":"彩妆",
+  "age":89,
+  "telephone":"为你画出大眼睛",
+  "rank":"产品"
+},{
+  "id":1003,
+  "name":"自然堂·防晒乳",
+  "gender":"护肤",
+  "age":109,
+  "telephone":"防晒，阻挡紫外线",
+  "rank":"产品"
+},{
+  "id":1004,
+  "name":"iPhone6s",
+  "gender":"手机",
+  "age":6044,
+  "telephone":"速度快，屏幕大",
+  "rank":"产品"
+},{
+  "id":1005,
+  "name":"华硕·笔记本",
+  "gender":"电脑",
+  "age":5500,
+  "telephone":"FX50 15.6英寸游戏本电脑",
+  "rank":"产品"
+},{
+  "id":1006,
+  "name":"联想·笔记本",
+  "gender":"电脑",
+  "age":4580,
+  "telephone":"超薄可拆屏笔记本",
+  "rank":"产品"
+},{
+  "id":1007,
+  "name":"乐视2pro",
+  "gender":"手机",
+  "age":1399,
+  "telephone":"超薄，指纹解锁音乐手机",
+  "rank":"产品"
+},{
+  "id":1008,
+  "name":"丸美·眼霜",
+  "gender":"护肤",
+  "age":199,
+  "telephone":"弹弹弹，弹走鱼尾纹",
+  "rank":"产品"
+}]

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>网络购物系统</title>
+<!--jquery-->
+<script src="js/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!--angularJS-->
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-locale_zh-cn.js"></script>
+<!--highchars-->
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-3d.js"></script>
+
+<!--personal-->
+<script src="app.js"></script>
+<script src="loads/stuMan.js"></script>
+<script src="loads/teaInfoMan.js"></script>
+<script src="loads/category/category.js"></script>
+<script src="loads/cms/cms.js"></script>
+<script src="loads/pie/pie.js"></script>
+
+
+
+</head>
+<body ng-controller="mainController">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+		<div class="navbar-brand">
+			网络购物系统
+		</div>
+	</div>
+  </nav>
+
+  <div class="container">
+	<div class="row">
+	  <!--功能区-->
+	  <div class="col-xs-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="title">
+					操作选项
+				</div>
+			</div>
+			<div class="list-group">
+			<!--一级功能-->
+			  <a class="list-group-item" href="javascript:void(0)"
+			  ng-repeat="item in config | filter:{parent:null}"
+			  ng-click="data.changeTabs(item.cId)">
+			  {{item.cName}}
+			  </a>
+			</div>
+		</div>
+	  </div>
+	  <!--内容-->
+	  <div class="col-xs-10">
+	    <!--二级功能-->
+		<ul class="nav nav-tabs">
+			<li ng-repeat="item in data.tabs"
+			ng-click="data.changeCurrentTab($event)"
+			class="{{$first?'active':''}}">
+			  <a href="{{item.url}}">{{item.cName}}</a>
+			</li>
+		</ul>
+		
+		<div ng-view></div>
+	  </div>
+	</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>	   <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>网络购物 </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="ft5_93_present/ft5_93_present/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="ft5_93_present/ft5_93_present/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="ft5_93_present/ft5_93_present/css/bootstrap.css">
+
+	<link rel="stylesheet" href="ft5_93_present/ft5_93_present/css/style.css">
+	<script src="js/angular.min.js"></script>
+	<!-- Modernizr JS -->
+	<script src="ft5_93_present/ft5_93_present/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+		<script src="ft5_93_present/ft5_93_present/js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body ng-app="myApp">
+
+		<header id="fh5co-header" role="banner">
+			<div class="container text-center">
+				<div id="fh5co-logo">
+					<a href="index.html"><img src="ft5_93_present/ft5_93_present/images/logo.png" width="380px" height="115px"></a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="login.html">登录</a></li>
+						<li><a href="login.html">注册</a></li>
+						<li><a href="#">店家</a></li>
+						<li><a href="#">评论区</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div  ng-controller="homeCtrl">
+		<div class="container-fluid pt70 pb70" >
+			<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+
+					<!--{{teaData}}-->
+					<div class="fh5co-project masonry-brick" ng-repeat="item in teaData.teachers">
+						<a href="single.html">
+							<img src="{{item.picture}}" width="290px" height="350px" >
+							<div class="media-body">
+								<h3>{{item.name}}</h3>
+								类别：{{item.gender}}
+								<br>
+								功能：{{item.rank}}
+								<br>
+								价格：{{item.email}}
+								<br>
+								产品介绍：{{item.record}}
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="pinlun">
+				<h3>评论区</h3>
+				<div ng-repeat="item in cmsData.cms">
+					{{item.title}}
+					{{item.content}}
+					{{item.time}}
+					{{item.clickTimes}}
+				</div>
+				<!--{{cmsData}}-->
+			</div>
+			<!--END .fh5co-projects-feed-->
+		</div>
+		<!-- END .container-fluid -->
+
+		<footer id="fh5co-footer" role="contentinfo">
+			<div class="container-fluid">
+				<div class="footer-content">
+					<div class="copyright"><small>网络购物系统 <br>版权所有归江西理工大学 </small></div>
+				</div>
+			</div>
+		</footer>
+	<script src="ft5_93_present/ft5_93_present/js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="ft5_93_present/ft5_93_present/js/bootstrap.min.js"></script>
+	<!-- masonry -->
+	<script src="ft5_93_present/ft5_93_present/js/jquery.masonry.min.js"></script>
+	<!-- MAIN JS -->
+	<script src="ft5_93_present/ft5_93_present/js/main.js"></script>
+
+		<script type="text/javascript">
+			var app = angular.module('myApp',[]);
+			app.controller("homeCtrl",function($scope,$http){
+				//会员相关信息
+				$scope.stuData = {};
+				$scope.teaData = {};
+				$scope.categorys = [];
+				$scope.cmsData = {};
+				$http.get("json/students.json").success(function(data){
+					$scope.stuData.students = data;
+				});
+				$http.get("json/teachers.json").success(function(data){
+					$scope.teaData.teachers = data;
+				});
+				$http.get("json/categorys.json").success(function(data){
+					$scope.categorys = data;
+				});
+				$http.get("json/cms.json").success(function(data){
+					$scope.cmsData.cms = data;
+				});
+
+			});
+		</script>
+
+	</body>
+</html>
+

@@ -1,0 +1,96 @@
+[{
+  "id":1001,
+  "name":"韩束·补水乳",
+  "gender":"护肤",
+  "rank":"补水",
+  "email":"144元",
+  "record":"巨补水，消除干燥肌肤",
+  "picture":"images/韩束.jpg",
+  "salary":144,
+  "daySalary":109
+},{
+  "id":1002,
+  "name":"iPhone7s",
+  "gender":"手机",
+  "rank":"最新机",
+  "email":"6044元",
+  "record":"速度快，屏幕大",
+  "picture":"images/iPhone.jpg",
+  "salary":6044,
+  "daySalary":6029
+},{
+  "id":1003,
+  "name":"自然堂·防晒乳",
+  "gender":"护肤",
+  "rank":"防晒",
+  "email":"109元",
+  "record":"防晒，阻挡紫外线",
+  "picture":"images/自然堂.jpg",
+  "salary":109,
+  "daySalary":99
+},{
+  "id":1004,
+  "name":"华硕·笔记本 ",
+  "gender":"电脑",
+  "rank":"笔记本",
+  "email":"5500元",
+  "record":"FX50 15.6英寸游戏本电脑",
+  "picture":"images/AUS.jpg",
+  "salary":5500,
+  "daySalary":4899
+},{
+  "id":1005,
+  "name":"连衣裙 ",
+  "gender":"衣服",
+  "rank":"女装",
+  "email":"500元",
+  "record":"简练连衣裙，出门必备",
+  "picture":"images/clothes.jpg",
+  "salary":5500,
+  "daySalary":4899
+},
+  {
+    "id":1006,
+    "name":"华硕·笔记本 ",
+    "gender":"电脑",
+    "rank":"笔记本",
+    "email":"5500元",
+    "record":"FX50 15.6英寸游戏本电脑",
+    "picture":"images/AUS.jpg",
+    "salary":5500,
+    "daySalary":4899
+  },
+  {
+    "id":1007,
+    "name":"华硕·笔记本 ",
+    "gender":"电脑",
+    "rank":"笔记本",
+    "email":"5500元",
+    "record":"FX50 15.6英寸游戏本电脑",
+    "picture":"images/AUS.jpg",
+    "salary":5500,
+    "daySalary":4899
+  },
+  {
+    "id":1008,
+    "name":"华硕·笔记本 ",
+    "gender":"电脑",
+    "rank":"笔记本",
+    "email":"5500元",
+    "record":"FX50 15.6英寸游戏本电脑",
+    "picture":"images/AUS.jpg",
+    "salary":5500,
+    "daySalary":4899
+  },
+  {
+    "id":1009,
+    "name":"华硕·笔记本 ",
+    "gender":"电脑",
+    "rank":"笔记本",
+    "email":"5500元",
+    "record":"FX50 15.6英寸游戏本电脑",
+    "picture":"images/AUS.jpg",
+    "salary":5500,
+    "daySalary":4899
+  }
+]

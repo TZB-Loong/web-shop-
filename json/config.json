@@ -1,0 +1,46 @@
+[{
+  "cId":1,
+  "cName":"产品分类管理",
+  "url":"#/stuMan",
+  "parent":null
+},{
+  "cId":2,
+  "cName":"产品发布",
+  "url":null,
+  "parent":null
+},{
+  "cId":3,
+  "cName":"产品简介",
+  "url":"#/teaInfoMan",
+  "parent":2
+},{
+  "cId":4,
+  "cName":"产品价格管理",
+  "url":"#/teaSalaryMan",
+  "parent":2
+},{
+  "cId":5,
+  "cName":"会员管理",
+  "url":"#/category",
+  "parent":null
+},{
+  "cId":6,
+  "cName":"评论区",
+  "url":null,
+  "parent":null
+},{
+  "cId":7,
+  "cName":"发布评论",
+  "url":"#/publisur",
+  "parent":6
+},{
+  "cId":8,
+  "cName":"评论管理",
+  "url":"#/essay",
+  "parent":6
+},{
+  "cId":9,
+  "cName":"产品统计",
+  "url":"#/pie",
+  "parent":null
+}]

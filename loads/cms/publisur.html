@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-10">
+	<form action="javascript:void(0)" class="form-group">
+	  <div class="input-group">
+	    <span class="input-group-addon">标题</span>
+		<input type="" ng-model="data.newCms.title" class="form-control">
+	  </div>
+	  <div class="input-group">
+	    <span class="input-group-addon">栏目</span>
+		<select class="form-control" ng-model="data.newCms.category">
+			<option value="">请选中</option>
+			<option value="{{item.id}}" ng-repeat="item in categorys">{{item.name}}</option>
+		</select>
+	  </div>
+	  <div class="input-group">
+	    <span class="input-group-addon">内容</span>
+		<textarea class="form-control" ng-model="data.newCms.content"  rows="10"></textarea>
+	  </div>
+	  <button class="btn btn-primary btn-block" ng-click="data.addCms()">发布</button>
+	</form>
+  </div>
+</div>
+

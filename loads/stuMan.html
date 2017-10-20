@@ -1,0 +1,103 @@
+
+
+<div class="collapse navbar-collapse">
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+	  <select class="form-control" ng-model="data.search.key">
+	  	<option value="">分类选择</option>
+	  	<option value="name">名称</option>
+	  	<option value="gender">类别</option>
+	  </select>
+      <input type="text" ng-model="data.search.val" class="form-control" placeholder="输入您想要的产品">
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="data.searchStu()">搜索</button>
+  </form>
+</div>
+<!--信息列表-->
+<table class="table">
+  <thead>
+  	<tr>
+  		<td>选择</td>
+  		<td>名称</td>
+  		<td>类别</td>
+  		<td>价格</td>
+  		<td>产品介绍</td>
+  	</tr>
+  </thead>
+<style>
+	td span{
+		cursor:pointer;
+	}
+</style>
+  <tbody>
+  	<tr ng-repeat="item in data.students | filter:data.criteria">
+  		<td><input type="checkbox" ng-model="item.checked"></td>
+  		<td> 
+			{{item.name}} 
+			<span class="badge" ng-show="item.rank=='已加入'?true:false" ng-click="data.becomeMember(item.id)">
+			已加入
+			</span>
+		</td>
+  		<td>{{item.gender}}</td>
+  		<td>{{item.age}}</td>
+  		<td>{{item.telephone}}</td>
+  	</tr>
+  </tbody>
+</table>
+
+
+<!--操作栏-->
+<div style="position:fixed;bottom:20px">
+<div class="btn-group">
+   <button class="btn btn-primary" ng-click="data.showAddModal()">添加</button>
+   <button class="btn btn-primary"
+   ng-click="data.showUpdModal()">修改</button>
+   <button class="btn btn-primary"
+   ng-click="data.delStu()">删除</button>
+   <button class="btn btn-primary"
+   ng-click="data.becomeLeader()">加入购物车</button>
+</div>
+</div>
+<!--模态框。弹框-->
+<div class="modal fade" id="stuModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+	<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updStu():data.addStu()">
+		<div class="modal-body">
+		    <div class="input-group">
+			  <span class="input-group-addon">名称</span>
+			  <input type="" class="form-control" ng-model="newUser.name"
+			  ng-readonly="data.option=='upd'?true:false">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">类别</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.gender">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">价格</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.age">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">产品介绍</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.telephone">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+	</form>
+
+	    </div>
+	  </div>
+    </div>

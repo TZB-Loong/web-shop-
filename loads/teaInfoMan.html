@@ -1,0 +1,100 @@
+<style>
+	img{
+		width:150px;
+		height:150px;
+	}
+</style>
+<div class="collapse navbar-collapse">
+	<form action="javascript:void(0)"  class="navbar-form navbar-left">
+		<div class="form-group">
+			<select name="" 
+			class="form-control">
+				<option value="">请选择</option>
+				<option value="name">产品名称</option>
+				<option value="gender">类别</option>
+			</select>
+			<input type="text" class="form-control" 
+			placeholder="Search">
+        </div>
+
+        <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+</div>
+<div class="row">
+	<div class="col-xs-12 " >
+	<ul class="media-list">
+		<li class="media well" ng-repeat="item in data.teachers">
+			<input type="checkbox" class="pull-left" 
+			ng-model = "item.checked"
+			style="margin:5px">
+			<a class="pull-left" href="">
+				<img class="media-object" src="{{item.picture}}" alt="">
+			</a>
+			<div class="media-body">
+			  <h3>{{item.name}}</h3>
+			  类别：{{item.gender}}
+			  <br>
+			  功能：{{item.rank}}
+			  <br>
+			  价格：{{item.email}}
+			  <br>
+			  产品介绍：{{item.record}}
+			</div>
+		</li>
+	</ul>
+	</div>
+</div>
+<!--按钮组-->
+<div class="btn-group" style="position:fixed;bottom:20px">
+  <button class="btn btn-primary" ng-click="data.showAddTea()">添加</button>
+  <button class="btn btn-primary"
+  ng-click="data.delTea()">删除</button>
+  <button class="btn btn-primary"
+  ng-click="data.showUpdTea()">修改</button>
+</div>
+
+<!--模态框。弹框-->
+<div class="modal fade" id="teaModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+		<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updTea():data.addTea()">
+		<div class="modal-body">
+		    <div class="input-group">
+			  <span class="input-group-addon">产品名称</span>
+			  <input type="" ng-model="data.newTea.name" 
+			  ng-readonly="data.option=='upd'?true:false" 
+			  class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">类别</span>
+			  <input type="" ng-model="data.newTea.gender" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">功能</span>
+			  <input type="" ng-model="data.newTea.rank" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">价格</span>
+			  <input type="" ng-model="data.newTea.email" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">产品介绍</span>
+			  <input type="" ng-model="data.newTea.record" class="form-control">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+		</form>
+	</div>
+ </div>
+</div>
+	

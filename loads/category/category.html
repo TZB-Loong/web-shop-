@@ -1,0 +1,61 @@
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>选择</td>
+			<td>会员名称</td>
+			<td>ID号</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in data.categorys">
+			<td><input type="checkbox" ng-model="item.checked"></td>
+			<td>{{item.name}}</td>
+			<td>{{item.cord}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="position:fixed;bottom:20px">
+<div class="btn-group">
+   <button class="btn btn-primary" ng-click="data.showAddModal()">添加</button>
+   <button class="btn btn-primary"
+   ng-click="data.showUpdModal()">修改</button>
+   <button class="btn btn-primary"
+   ng-click="data.delCat()">删除</button>
+</div>
+</div>
+
+<!--模态框。弹框-->
+<div class="modal fade" id="categoryModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+	<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updCat():data.addCat()">
+		<div class="modal-body">		    
+			<div class="input-group">
+			  <span class="input-group-addon">会员名称</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.name">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">ID号</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.cord">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+	</form>
+
+	    </div>
+	  </div>
+    </div>

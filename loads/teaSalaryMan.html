@@ -1,0 +1,58 @@
+<table class="table">
+	<thead>
+		<tr>
+			<td>编号</td>
+			<td>产品名称</td>
+			<td>原价</td>
+			<td>会员价</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in data.teachers">
+			<td><input type="checkbox" ng-model="item.checked"></td>
+			<td>{{item.name}}</td>
+			<td>{{item.salary}}</td>
+			<td>{{item.daySalary}}</td>
+		</tr>
+	</tbody>
+</table>
+<button class="btn btn-primary" ng-click="data.showChangeSalary()">调整价格</button>
+
+<!--模态框。弹框-->
+<div class="modal fade" id="salaryModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+	<form action="javascript:void(0);" ng-submit="data.changeSalary(data.newTea.id)">
+		<div class="modal-body">
+			<div class="input-group">
+			  <span class="input-group-addon">原价</span>
+			  <input type="" ng-model="data.newTea.salary" 
+			  ng-readonly=true
+			  class="form-control">
+			  <span class="input-group-addon">原价上涨</span>
+			  <input type="number" ng-model="data.salary.upSalary" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">会员价</span>
+			  <input type="" ng-model="data.newTea.daySalary" 
+			  ng-readonly=true
+			  class="form-control">
+			  <span class="input-group-addon">会员价上涨</span>
+			  <input type="number" ng-model="data.salary.upDaySalary" class="form-control">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+	</form>
+  </div>
+ </div>
+</div>
